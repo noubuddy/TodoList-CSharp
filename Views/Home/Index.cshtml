@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Todo list</h1>
+    <div class="input-group mb-3">
+        @* <form> *@
+            <input type="text" class="form-control" placeholder="Read a book" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <button class="btn btn-outline-secondary" type="button" id="button-addon2" href="@Url.Action("CreateDb", "Home")">Button</button>
+            @* <a class="btn btn-outline-secondary" type="button" id="button-addon2" href="@Url.Action("CreateDb", "Home")">Button</a> *@
+        @* </form> *@
+    </div>
+</div>
