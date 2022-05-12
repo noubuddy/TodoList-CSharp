@@ -1,5 +1,6 @@
 using RethinkDb.Driver;
 using RethinkDb.Driver.Net;
+using TodoList_CSharp.Models;
 
 namespace TodoList_CSharp.Modules;
 
@@ -22,8 +23,18 @@ public class DatabaseManager
         r.DbCreate(dbName).Run(conn);
     }
 
+    public void DeleteDb(string dbName)
+    {
+        r.DbDrop(dbName).Run(conn);
+    }
+
     public void CreateTable(string dbName, string tableName)
     {
         r.Db(dbName).TableCreate(tableName).Run(conn);
+    }
+
+    public void Insert(string dbName, string tableName, Todo todoMessage)
+    {
+        r.Db(dbName).Table(tableName).Insert(todoMessage).Run(conn);
     }
 }
